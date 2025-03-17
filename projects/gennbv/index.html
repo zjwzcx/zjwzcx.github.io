@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction">
+  <meta name="keywords" content="Active 3D Reconstruction, Next-Best-View, Policy">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    h1 {
+      color: rgb(125, 21, 125);
+    }
+  </style>
+  <title>GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <!-- GoogleAPI
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">-->
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- Title -->
+          <h1 class="title is-1 publication-title">GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction</h1>
+          <!-- <h2 class="subtitle is-3" style="margin-bottom: 0;">CVPR 2024</h2> -->
+          <!-- <hr class="text-border-line"> -->
+          <span class="text-border-title" style="font-size: 2em;">CVPR 2024</span>
+          <!-- Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xiao-chen.tech/">Xiao Chen</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://quanyili.github.io/">Quanyi Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://tai-wang.github.io/">Tai Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://tianfan.info/">Tianfan Xue</a><sup>2,†</sup>
+            <span class="author-block">
+              <a href="https://oceanpang.github.io/">Jiangmiao Pang</a><sup>1,†</sup></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai AI Laboratory,</span>
+            <span class="author-block"><sup>2</sup>The Chinese University of Hong Kong,</span>
+            <span class="author-block"><sup>†</sup>Corresponding Authors</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/paper/GenNBV.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2402.16174"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zjwzcx/GenNBV" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Data Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1SUcDy8hwluEBpTtKZ3_83ySKnLlsZ4hi?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa-solid fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=GP0PdaXs93E"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (YouTube)</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.bilibili.com/video/BV1Vz421Z7os/?vd_source=03a8e4a181629720c5623ae40bda6ea9"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (Bilibili)</span>
+                </a>
+              </span>
+
+              <!-- Dataset Link.
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data (Coming Soon)</span>
+                  </a>
+              </span>
+            </div> -->
+          </div>
+          <!-- <h2 class="subtitle is-3" style="margin-bottom: 0;">CVPR 2024</h2> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <hr class="text-border-line">
+      <!-- <div class="column is-four-fifths">
+        <h1 class="title is-1" style="color: rgb(125, 21, 125);">Video</h1>
+      </div> -->
+    </div>
+    <div class="hero-body">
+      <video id="teaser"               
+               controls
+               muted
+               preload
+               playsinline height="100%">
+        <source src="./static/videos/gennbv_v9_comp.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+      <!-- <h2 class="subtitle has-text-centered">
+        <span class="dnerf"> GenNBV </span>
+      </h2> -->
+  </div>
+</section>
+<!-- <hr class="text-border-line"> -->
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <img width="140%" src="./static/images/Fig_Teaser.png"">
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          To determine the best view for 3D reconstruction, previous methods only chose from hand-crafted action space or based on object-centric capturing, lacking the ability to generalize to unforeseen scenes (Left). With our end-to-end trained, generalized free-space policy, it can generalize to unseen objects, enabling the captured drone to image from any viewpoint (Right).
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-1" style="color: rgb(125, 21, 125);">Abstract</h1>
+        <div class="content has-text-justified">
+          While recent advances in neural radiance field enable realistic digitization for large-scale scenes, the image-capturing process is still time-consuming and labor-intensive. Previous works attempt to automate this process using the Next-Best-View (NBV) policy for active 3D reconstruction. However, the existing NBV policies heavily rely on hand-crafted criteria, limited action space, or per-scene optimized representations. These constraints limit their cross-dataset generalizability. To overcome them, we propose <u><b>GenNBV</b></u>, an end-to-end generalizable NBV policy. Our policy adopts a reinforcement learning (RL)-based framework and extends typical limited action space to 5D free space. It empowers our agent drone to scan from any viewpoint, and even interact with unseen geometries during training. To boost the cross-dataset generalizability, we also propose a novel multi-source state embedding, including geometric, semantic, and action representations. We establish a benchmark using the Isaac Gym simulator with the Houses3K and OmniObject3D datasets to evaluate this NBV policy. Experiments demonstrate that our policy achieves a 98.26% and 97.12% coverage ratio on unseen building-scale objects from these datasets, respectively, outperforming prior solutions.
+        </div>
+      </div>
+    </div>
+
+    <div class="content has-text-centered">
+      <img width="140%" src="./static/images/Fig_Teaser.png"">
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          To determine the best view for 3D reconstruction, previous methods only chose from hand-crafted action space or based on object-centric capturing, lacking the ability to generalize to unforeseen scenes (Left). With our end-to-end trained, generalized free-space policy, it can generalize to unseen objects, enabling the captured drone to image from any viewpoint (Right).
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">Framework Overview</h1>
+    </div>
+    <div class="content has-text-centered">
+      <img width="140%" src="./static/images/Fig_Method.png">
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          Overview of our proposed framework GenNBV. Our end-to-end policy takes the historical multi-source observations as input,  transforms them into a more informative scene representation, and produces the next viewpoint position. A reward signal will be returned at training time to optimize the end-to-end policy for maximizing the expected cumulative reward in one episode. Specifically, the signal is the increased coverage ratio after collecting a new viewpoint.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">Generalizability Evaluation</h1>
+      </div>
+      <div class="content has-text-centered">
+        <img width="100%" src="./static/images/exp_main_table.png"">
+      </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          <!-- Table 1. Evaluation results of Next-Best-View policies for active 3D reconstruction on <b>Houses3K</b> and the house category from <b>OmniObject3D</b> (cross-dataset generalization).  -->
+          Evaluation results of Next-Best-View policies for active 3D reconstruction on <b>Houses3K</b> and the house category from <b>OmniObject3D</b> (cross-dataset generalization).
+          The number of views is set to 30 and 20 for Houses3K and OmniObject3D, respectively.<br>
+          "<b>*</b>": the policy is trained on Houses3K training set and evaluated on holdout Houses3K test set and OmniObject3D house category.<br>
+          "<b>†</b>": the policy heavily relies on optimized per-scene representation (NeRF), thus is directly trained and evaluated on testing objects.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      </div>
+      <div class="content has-text-centered">
+        <img width="150%" src="./static/images/Fig_Vis.png"">
+      </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          The visualization results of unseen 3D objects reconstructed by Scan-RL and our model to compare the generalizability. (a) Unseen buildings from the test set of Houses3K. (b) Unseen buildings from OmniObject3D.
+          It's quite obvious that some parts of the model reconstructed by Scan-RL are wrong or missing. For example, the second object in the first row has a pillar in the wrong shape. Scan-RL fails to reconstruct the roof edge for the fourth object from OmniObject3D, as shown in the third row.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">Generalization on Non-house Categories</h1>
+      </div>
+      <div class="content has-text-centered">
+        <img width="70%" src="./static/images/exp_main_non_house.png">
+      </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <!-- Table 2. The cross-dataset generalization for non-house categories. We train the baseline Scan-RL and our GenNBV on Houses3K and generalize them to non-house categories from OmniObject3D and an indoor scene from Replica. -->
+          The cross-dataset generalization for non-house categories. We train the baseline Scan-RL and our GenNBV on Houses3K and generalize them to non-house categories from OmniObject3D and an indoor scene from Replica.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      </div>
+      <div class="content has-text-centered">
+        <img width="130%" src="./static/images/Fig_Vis_City.png"">
+      </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          The visualization results of an unseen 3D outdoor scene with enormous details from Objaverse, reconstructed by Uncertainty-guided, Scan-RL and our model.
+          Compared to the uncertainty-guided method and Scan-RL, the scene reconstructed by our method is more watertight and has fewer holes on the ground and building surface, especially in the region highlighted by the red box.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">Ablation Study</h1>
+    </div>
+
+    <div class="content has-text-centered">
+      <img width="60%" src="./static/images/exp_abl_repre.png"">
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <!-- Table 2. Ablation studies of representation categories in our framework on unseen Houses3K test set. -->
+          Ablation studies of representation categories in our framework on unseen Houses3K test set.
+        </div>
+      </div>
+    </div>
+
+    <!-- 
+    <div class="content has-text-centered">
+      <img width="70%" src="./static/images/exp_abl_depth.png"">
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          Ablation studies of depth-based representations on unseen Houses3K test set, where depth map is the only sensory source.
+        </div>
+      </div>
+    </div> 
+    -->
+
+    <div class="content has-text-centered">
+      <img width="55%" src="./static/images/exp_abl_scaling.png"">
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <!-- Table 4. Ablation studies of the number of training objects in our framework on unseen OmniObject3D house category. -->
+          Ablation studies of the number of training objects in our framework on OmniObject3D house category.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content has-text-centered">
+      <img width="80%" src="./static/images/Fig_Scaling.png"">
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          The curve of coverage (%) with the increasing number of training objects on OmniObject3D house category.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title" style="color: rgb(125, 21, 125);">Citation</h2>
+    If you find this project helpful, please cite us:
+    <pre><code>@article{chen2024gennbv,
+  author    = {Chen, Xiao and Li, Quanyi and Wang, Tai and Xue, Tianfan and Pang, Jiangmiao},
+  title     = {GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction},
+  journal   = {arXiv preprint arXiv:2402.16174},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3">Acknowledgement</h2>
+    <div class="content has-text-justified">
+      <p>
+        Tao Huang, Zeqi Xiao, Mulin Yu, Junfeng Long, Meng Wei
+      </p>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/paper/UniHSI.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/OpenRobotLab/UniHSI" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template/">Academic Project Page Template</a>
+            which was adopted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+          </p>
+          <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=_Oc9F3kg19qBNmKgX28mdlmSyRKP3q24f-fNiCZ4qaE'></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
