@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction">
-  <meta name="keywords" content="Active 3D Reconstruction, Next-Best-View, Policy">
+        content="GLEAM: Learning Generalizable Exploration Policy for Active Mapping in Complex 3D Indoor Scenes">
+  <meta name="keywords" content="Active Mapping, Next-Best-View, Exploration Policy">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     h1 {
       color: rgb(125, 21, 125);
     }
   </style>
-  <title>GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction</title>
+  <title>GLEAM: Learning Generalizable Exploration Policy for Active Mapping in Complex 3D Indoor Scenes</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -74,27 +74,22 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <!-- Title -->
-          <h1 class="title is-1 publication-title">GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction</h1>
+          <h1 class="title is-1 publication-title">GLEAM: Learning Generalizable Exploration Policy for Active Mapping in Complex 3D Indoor Scenes</h1>
           <!-- <h2 class="subtitle is-3" style="margin-bottom: 0;">CVPR 2024</h2> -->
           <!-- <hr class="text-border-line"> -->
           <span class="text-border-title" style="font-size: 2em;">CVPR 2024</span>
           <!-- Authors -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://xiao-chen.tech/">Xiao Chen</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="https://quanyili.github.io/">Quanyi Li</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://tai-wang.github.io/">Tai Wang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://tianfan.info/">Tianfan Xue</a><sup>2,†</sup>
-            <span class="author-block">
-              <a href="https://oceanpang.github.io/">Jiangmiao Pang</a><sup>1,†</sup></span>
+            <span class="author-block"><a href="https://xiao-chen.tech/">Xiao Chen</a><sup>1,2</sup>,</span>
+            <span class="author-block"><a href="https://tai-wang.github.io/">Tai Wang</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://quanyili.github.io/">Quanyi Li</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://taohuang13.github.io/">Tao Huang</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://oceanpang.github.io/">Jiangmiao Pang</a><sup>2</sup></span>
+            <span class="author-block"><a href="https://tianfan.info/">Tianfan Xue</a><sup>1</sup>,</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Shanghai AI Laboratory,</span>
-            <span class="author-block"><sup>2</sup>The Chinese University of Hong Kong,</span>
-            <span class="author-block"><sup>†</sup>Corresponding Authors</span>
+            <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>Shanghai AI Laboratory,</span>
           </div>
 
           <div class="column has-text-centered">
@@ -226,7 +221,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          To determine the best view for 3D reconstruction, previous methods only chose from hand-crafted action space or based on object-centric capturing, lacking the ability to generalize to unforeseen scenes (Left). With our end-to-end trained, generalized free-space policy, it can generalize to unseen objects, enabling the captured drone to image from any viewpoint (Right).
+          We introduce <u><b>GLEAM</b></u>, a unified generalizable exploration policy for complex 3D indoor scenes trained on our benchmark <u><b>GLEAM-Bench</b></u> including 1024 diverse training scenes. We conduct a cross-dataset evaluation to generalize our policy to an unseen real-scan scene from Matterport3D, scanning 83.67% areas using 40 keyframes, without any fine-tuning and prior knowledge.
         </div>
       </div>
     </div>
@@ -236,11 +231,10 @@
 
 
 
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <h1 class="title is-1" style="color: rgb(125, 21, 125);">Framework Overview</h1>
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">GLEAM-Bench</h1>
     </div>
     <div class="content has-text-centered">
       <img width="140%" src="./static/images/Fig_Method.png">
@@ -249,7 +243,28 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          Overview of our proposed framework GenNBV. Our end-to-end policy takes the historical multi-source observations as input,  transforms them into a more informative scene representation, and produces the next viewpoint position. A reward signal will be returned at training time to optimize the end-to-end policy for maximizing the expected cumulative reward in one episode. Specifically, the signal is the increased coverage ratio after collecting a new viewpoint.
+          The overview of our framework. Trained on 1,024 diverse indoor scenes, <u><b>GLEAM</b></u> processes depth observations and agents' poses to iteratively update a global map. An egocentric map is extracted and augmented with exploration frontiers to capture semantic exploration cues. A lightweight Transformer encoder then analyzes the egocentric map and trajectory history to predict the long-term goals. The reward function of coverage is computed by the global map and ground-truth occupancy map.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">GLEAM</h1>
+    </div>
+    <div class="content has-text-centered">
+      <img width="140%" src="./static/images/Fig_Method.png">
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          The overview of our framework. Trained on 1,024 diverse indoor scenes, <u><b>GLEAM</b></u> processes depth observations and agents' poses to iteratively update a global map. An egocentric map is extracted and augmented with exploration frontiers to capture semantic exploration cues. A lightweight Transformer encoder then analyzes the egocentric map and trajectory history to predict the long-term goals. The reward function of coverage is computed by the global map and ground-truth occupancy map.
         </div>
       </div>
     </div>
@@ -308,27 +323,6 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <h1 class="title is-1" style="color: rgb(125, 21, 125);">Generalization on Non-house Categories</h1>
-      </div>
-      <div class="content has-text-centered">
-        <img width="70%" src="./static/images/exp_main_non_house.png">
-      </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <!-- Table 2. The cross-dataset generalization for non-house categories. We train the baseline Scan-RL and our GenNBV on Houses3K and generalize them to non-house categories from OmniObject3D and an indoor scene from Replica. -->
-          The cross-dataset generalization for non-house categories. We train the baseline Scan-RL and our GenNBV on Houses3K and generalize them to non-house categories from OmniObject3D and an indoor scene from Replica.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
       </div>
       <div class="content has-text-centered">
         <img width="130%" src="./static/images/Fig_Vis_City.png"">
@@ -374,18 +368,6 @@
       </div>
     </div>
 
-    <!-- 
-    <div class="content has-text-centered">
-      <img width="70%" src="./static/images/exp_abl_depth.png"">
-    </div>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          Ablation studies of depth-based representations on unseen Houses3K test set, where depth map is the only sensory source.
-        </div>
-      </div>
-    </div> 
-    -->
 
     <div class="content has-text-centered">
       <img width="55%" src="./static/images/exp_abl_scaling.png"">
@@ -425,19 +407,19 @@
 
 
 
-
+<!-- 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title" style="color: rgb(125, 21, 125);">Citation</h2>
     If you find this project helpful, please cite us:
     <pre><code>@article{chen2024gennbv,
   author    = {Chen, Xiao and Li, Quanyi and Wang, Tai and Xue, Tianfan and Pang, Jiangmiao},
-  title     = {GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction},
+  title     = {GLEAM: Learning Generalizable Exploration Policy for Active Mapping in Complex 3D Indoor Scenes},
   journal   = {arXiv preprint arXiv:2402.16174},
-  year      = {2024},
+  year      = {2025},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <!-- <section class="section">
@@ -456,15 +438,6 @@
 
 <footer class="footer">
   <div class="container">
-    <!-- <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/paper/UniHSI.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/OpenRobotLab/UniHSI" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
