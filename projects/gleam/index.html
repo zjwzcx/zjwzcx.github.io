@@ -211,9 +211,9 @@
     </div>
 
     <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
+      <div class="column is-four-fifths">
         <div class="content has-text-justified">
-          We introduce <u><strong style="color: #8C1515;">GLEAM</strong></u>, a unified generalizable exploration policy for complex 3D indoor scenes trained on our benchmark <u><strong style="color: #8C1515;">GLEAM-Bench</strong></u> including 1024 diverse training scenes. We conduct a cross-dataset evaluation to generalize our policy to an unseen real-scan scene from Matterport3D, scanning 83.67% areas using 40 keyframes, without any fine-tuning and prior knowledge.
+          We introduce <strong style="color: #8C1515;">GLEAM</strong>, a unified generalizable exploration policy for complex 3D indoor scenes trained on our benchmark <strong style="color: #8C1515;">GLEAM-Bench</strong> including 1024 diverse training scenes. We conduct a cross-dataset evaluation to generalize our policy to an unseen real-scan scene from Matterport3D, scanning 83.67% areas using 40 keyframes, without any fine-tuning and prior knowledge.
         </div>
       </div>
     </div>
@@ -231,25 +231,13 @@
         <div class="content has-text-justified">
             Generalizable active mapping in complex unknown environments remains a critical challenge for mobile robots. 
             Existing methods, constrained by limited training data and conservative exploration strategies, struggle to generalize across scenes with diverse layouts and complex connectivity.
-            To enable scalable training and reliable evaluation, we present <strong>GLEAM-Bench</strong>, the first large-scale benchmark with 1,152 diverse 3D scenes from synthetic and real datasets. 
-            In this work, we propose <strong>GLEAM</strong>, a <u>g</u>enera<u>l</u>izable <u>e</u>xploration policy for <u>a</u>ctive <u>m</u>apping.
+            To enable scalable training and reliable evaluation, we present <strong style="color: #8C1515;">GLEAM-Bench</strong>, the first large-scale benchmark with 1,152 diverse 3D scenes from synthetic and real datasets. 
+            In this work, we propose <strong style="color: #8C1515;">GLEAM</strong>, a <u>g</u>enera<u>l</u>izable <u>e</u>xploration policy for <u>a</u>ctive <u>m</u>apping.
             Its superior generalizability comes from our semantic representations, long-term goal and randomized strategies. 
             It significantly outperforms state-of-the-art methods, achieving 68.16% coverage (+11.41%) with efficient trajectories, and improved mapping accuracy on 128 unseen complex scenes.
         </div>
       </div>
     </div>
-
-    <!-- <div class="content has-text-centered">
-      <img width="140%" src="./static/images/Fig_Teaser.png"">
-    </div> -->
-
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <div class="content has-text-justified">
-          We introduce <u><strong style="color: #8C1515;">GLEAM</strong></u>, a unified generalizable exploration policy for complex 3D indoor scenes trained on our benchmark <u><strong style="color: #8C1515;">GLEAM-Bench</strong></u> including 1024 diverse training scenes. We conduct a cross-dataset evaluation to generalize our policy to an unseen real-scan scene from Matterport3D, scanning 83.67% areas using 40 keyframes, without any fine-tuning and prior knowledge.
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
 
@@ -268,7 +256,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          <b>Table</b>: The data sources of existing exploration policies for active mapping. Note that only a few high-quality scenes from these datasets are used in previous works. ``*": ProcTHOR-10K only provides the JSON files that organize the layout, instead of the directly usable meshes, thus we estimate its total navigable space according to the provided average value.<br>
+          <b>Table</b>: The data sources of existing exploration policies for active mapping. Note that only a few high-quality scenes from these datasets are used in previous works. <b>"*"</b>: ProcTHOR-10K only provides the JSON files that organize the layout, instead of the directly usable meshes, thus we estimate its total navigable space according to the provided average value.<br>
           <b>Figure</b>: The distribution of 1,152 scenes by the number of rooms in our benchmark <strong style="color: #8C1515;">GLEAM-Bench</strong>.
         </div>
       </div>
@@ -290,7 +278,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          The overview of our framework. Trained on 1,024 diverse indoor scenes, <u><strong style="color: #8C1515;">GLEAM</strong></u> processes depth observations and agents' poses to iteratively update a global map. An egocentric map is extracted and augmented with exploration frontiers to capture semantic exploration cues. A lightweight Transformer encoder then analyzes the egocentric map and trajectory history to predict the long-term goals. The reward function of coverage is computed by the global map and ground-truth occupancy map.
+          The overview of our framework. Trained on 1,024 diverse indoor scenes, <strong style="color: #8C1515;">GLEAM</strong> processes depth observations and agents' poses to iteratively update a global map. An egocentric map is extracted and augmented with exploration frontiers to capture semantic exploration cues. A lightweight Transformer encoder then analyzes the egocentric map and trajectory history to predict the long-term goals. The reward function of coverage is computed by the global map and ground-truth occupancy map.
         </div>
       </div>
     </div>
@@ -383,38 +371,36 @@
     </div>
 
     <div class="content has-text-centered">
-      <img width="60%" src="./static/images/exp_abl_repre.png"">
+      <img width="60%" src="./static/images/Exp_Abl_Tech.png"">
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
-          <!-- Table 2. Ablation studies of representation categories in our framework on unseen Houses3K test set. -->
-          Ablation studies of representation categories in our framework on unseen Houses3K test set.
+          Ablation studies of the scene representations and training strategies. The <b>bold</b> lines indicate the optimal designs, which are proposed by us and adopted in our framework.
         </div>
       </div>
     </div>
 
 
     <div class="content has-text-centered">
-      <img width="55%" src="./static/images/exp_abl_scaling.png"">
+      <img width="55%" src="./static/images/Exp_Abl_Source.png"">
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
-          <!-- Table 4. Ablation studies of the number of training objects in our framework on unseen OmniObject3D house category. -->
-          Ablation studies of the number of training objects in our framework on OmniObject3D house category.
+          Ablation studies of the diversity and complexity of training scenes. We train our exploration policies on different dataset sources to show the advances of cross-dataset and complex training data. The <b>bold</b> lines indicate the optimal designs, which are proposed by us and adopted in our framework.
         </div>
       </div>
     </div>
 
 
     <div class="content has-text-centered">
-      <img width="80%" src="./static/images/Fig_Scaling.png"">
+      <img width="80%" src="./static/images/Exp_Abl_Scaling.png"">
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
-          The curve of coverage (%) with the increasing number of training objects on OmniObject3D house category.
+          Ablation studies of the number of training scenes. We sample a proportionally reduced number of scenes from the complete 1024 training scenes to demonstrate the significance of the quantity and diversity of training scenes.
         </div>
       </div>
     </div>
