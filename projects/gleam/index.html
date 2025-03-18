@@ -78,6 +78,13 @@
           <h1 class="title is-1 publication-title" style="color: #8C1515; line-height: 1.1">
           GLEAM: Learning Generalizable Exploration Policy for Active Mapping in Complex 3D Indoor Scenes</h1>
 
+          <h1 class="title is-1 publication-title" style="color: #8C1515; 
+          line-height: 1.3;
+          margin-left: -0.5%;
+          margin-right: -0.5%;">
+          GLEAM: Learning Generalizable Exploration Policy for Active Mapping <br> in Complex 3D Indoor Scenes
+        </h1>
+
           <!-- <h2 class="subtitle is-3" style="margin-bottom: 0;">CVPR 2024</h2> -->
           <!-- <span class="text-border-title" style="font-size: 2em;">CVPR 2024</span> -->
           <!-- Authors -->
@@ -159,19 +166,7 @@
                   <span>Video (Bilibili)</span>
                 </a>
               </span>
-
-              <!-- Dataset Link.
-              <span class="link-block">
-                <a class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data (Coming Soon)</span>
-                  </a>
-              </span>
-            </div> -->
           </div>
-          <!-- <h2 class="subtitle is-3" style="margin-bottom: 0;">CVPR 2024</h2> -->
         </div>
       </div>
     </div>
@@ -204,17 +199,11 @@
 
 
 
-
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h1 class="title is-1" style="color: rgb(125, 21, 125);">Abstract</h1>
-        <div class="content has-text-justified">
-          While recent advances in neural radiance field enable realistic digitization for large-scale scenes, the image-capturing process is still time-consuming and labor-intensive. Previous works attempt to automate this process using the Next-Best-View (NBV) policy for active 3D reconstruction. However, the existing NBV policies heavily rely on hand-crafted criteria, limited action space, or per-scene optimized representations. These constraints limit their cross-dataset generalizability. To overcome them, we propose <u><b>GenNBV</b></u>, an end-to-end generalizable NBV policy. Our policy adopts a reinforcement learning (RL)-based framework and extends typical limited action space to 5D free space. It empowers our agent drone to scan from any viewpoint, and even interact with unseen geometries during training. To boost the cross-dataset generalizability, we also propose a novel multi-source state embedding, including geometric, semantic, and action representations. We establish a benchmark using the Isaac Gym simulator with the Houses3K and OmniObject3D datasets to evaluate this NBV policy. Experiments demonstrate that our policy achieves a 98.26% and 97.12% coverage ratio on unseen building-scale objects from these datasets, respectively, outperforming prior solutions.
-        </div>
-      </div>
-    </div>
+    <!-- <div class="columns is-centered has-text-centered">
+      <h1 class="title is-1" style="color: rgb(125, 21, 125);">GLEAM-Bench</h1>
+    </div> -->
 
     <div class="content has-text-centered">
       <img width="140%" src="./static/images/Fig_Teaser.png"">
@@ -227,6 +216,34 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-1" style="color: rgb(125, 21, 125);">Abstract</h1>
+        <div class="content has-text-justified">
+          While recent advances in neural radiance field enable realistic digitization for large-scale scenes, the image-capturing process is still time-consuming and labor-intensive. Previous works attempt to automate this process using the Next-Best-View (NBV) policy for active 3D reconstruction. However, the existing NBV policies heavily rely on hand-crafted criteria, limited action space, or per-scene optimized representations. These constraints limit their cross-dataset generalizability. To overcome them, we propose <u><b>GenNBV</b></u>, an end-to-end generalizable NBV policy. Our policy adopts a reinforcement learning (RL)-based framework and extends typical limited action space to 5D free space. It empowers our agent drone to scan from any viewpoint, and even interact with unseen geometries during training. To boost the cross-dataset generalizability, we also propose a novel multi-source state embedding, including geometric, semantic, and action representations. We establish a benchmark using the Isaac Gym simulator with the Houses3K and OmniObject3D datasets to evaluate this NBV policy. Experiments demonstrate that our policy achieves a 98.26% and 97.12% coverage ratio on unseen building-scale objects from these datasets, respectively, outperforming prior solutions.
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="content has-text-centered">
+      <img width="140%" src="./static/images/Fig_Teaser.png"">
+    </div> -->
+
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          We introduce <u><b>GLEAM</b></u>, a unified generalizable exploration policy for complex 3D indoor scenes trained on our benchmark <u><b>GLEAM-Bench</b></u> including 1024 diverse training scenes. We conduct a cross-dataset evaluation to generalize our policy to an unseen real-scan scene from Matterport3D, scanning 83.67% areas using 40 keyframes, without any fine-tuning and prior knowledge.
+        </div>
+      </div>
+    </div> -->
   </div>
 </section>
 
