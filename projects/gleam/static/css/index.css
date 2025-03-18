@@ -2,6 +2,13 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* .title_left > h1 {
+  color: #8C1515;
+  font-family: "Source Serif 4", serif;
+  font-weight: bold;
+  font-size: 2.6vw;
+  text-align: center;
+} */
 
 .footer .icon-link {
     font-size: 25px;
