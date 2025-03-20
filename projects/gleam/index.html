@@ -258,7 +258,7 @@
       <div class="column is-full">
         <div class="content has-text-justified">
           <b>Table</b>: The data sources for existing exploration policies for active mapping, with limited high-quality scenes employed in prior works. "<b>*</b>": ProcTHOR-10K contains exclusively layout JSONs rather than directly usable 3D meshes.<br>
-          <b>Figure</b>: The distribution of 1,152 scenes by the number of rooms in our benchmark <strong style="color: #8C1515;">GLEAM-Bench</strong>.
+          <b>Figure</b>: The distribution of 1,152 scenes by the number of rooms in our benchmark <strong>GLEAM-Bench</strong>.
         </div>
       </div>
     </div>
@@ -281,7 +281,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          The overview of our framework. Trained on 1,024 diverse indoor scenes, <strong style="color: #8C1515;">GLEAM</strong> processes depth observations and agents' poses to iteratively update a global map. An egocentric map is extracted and augmented with exploration frontiers to capture semantic exploration cues. A lightweight Transformer encoder then analyzes the egocentric map and trajectory history to predict the long-term goals. The reward function of coverage is computed by the global map and ground-truth occupancy map.
+          The overview of our framework. Trained on 1,024 diverse indoor scenes, <strong>GLEAM</strong> processes depth observations and agents' poses to iteratively update a global map. Then an egocentric map is extracted and augmented with exploration frontiers to capture semantic exploration cues. We employ a lightweight Transformer encoder to analyze the egocentric map and trajectory history for long-term goal prediction. The reward function of coverage is computed by the global map and ground-truth occupancy map.
         </div>
       </div>
     </div>
@@ -333,7 +333,7 @@
     </div>
 
     <div class="content has-text-centered">
-      <img width="70%" src="./static/images/Exp_Abl_Tech.png"">
+      <img width="60%" src="./static/images/Exp_Abl_Tech.png"">
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -343,7 +343,7 @@
       </div>
     </div>
 
-
+    <!-- 
     <div class="content has-text-centered">
       <img width="70%" src="./static/images/Exp_Abl_Source.png"">
     </div>
@@ -353,7 +353,8 @@
           Ablation studies of the diversity and complexity of training scenes. We train our exploration policies on different dataset sources to show the advances of cross-dataset and complex training data. The <b>bold</b> lines indicate the optimal designs, which are proposed by us and adopted in our framework.
         </div>
       </div>
-    </div>
+    </div> 
+    -->
 
 
     <div class="content has-text-centered">
@@ -366,6 +367,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
