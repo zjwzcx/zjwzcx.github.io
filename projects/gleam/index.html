@@ -207,9 +207,10 @@
     </div>
 
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <div class="content has-text-justified">
-          We introduce <strong style="color: #8C1515;">GLEAM</strong>, a unified generalizable exploration policy for complex 3D indoor scenes trained on our benchmark <strong style="color: #8C1515;">GLEAM-Bench</strong> including 1024 diverse training scenes. We conduct a cross-dataset evaluation to generalize our policy to an unseen real-scan scene from Matterport3D, scanning 83.67% areas using 40 keyframes, without any fine-tuning and prior knowledge.
+          We introduce <strong style="color: #8C1515;">GLEAM</strong>, a unified generalizable exploration policy for active mapping in complex 3D indoor scenes, trained and evaluated on 1,152 diverse scenes from our benchmark <strong style="color: #8C1515;">GLEAM-Bench</strong>.
+          Our cross-dataset generalization to an unseen real-scan scene from Matterport3D achieves 83.67% coverage using 40 keyframes, without any fine-tuning and prior knowledge.
         </div>
       </div>
     </div>
@@ -252,7 +253,7 @@
     </div>
 
     <div class="columns is-centered has-text-centered">
-      <h2 class="title is-2">A benchmark for active mapping-oriented generalizable exploration in complex 3D indoor scenes</h2>
+      <h4 class="title is-4">A benchmark for active mapping-oriented generalizable exploration in complex 3D indoor scenes</h4>
     </div>
 
 
@@ -263,7 +264,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          <b>- Table</b>: The data sources for existing exploration policies for active mapping, with limited high-quality scenes employed in prior works. "<b>*</b>": ProcTHOR-10K contains exclusively layout JSONs rather than directly usable 3D meshes.<br>
+          <b>- Table</b>: The data sources for existing exploration policies for active mapping, with limited high-quality scenes employed in prior works. <!-- "<b>*</b>": ProcTHOR-10K contains exclusively layout JSONs rather than directly usable 3D meshes.<br> -->
           <b>- Figure</b>: The distribution of 1,152 scenes by the number of rooms in GLEAM-Bench.<br>
           <b>- Overview</b>: These curated scene meshes are characterized by near-watertight geometry, diverse floorplan (≥10 types), and complex interconnectivity. We unify multi-source datasets through manual filtering, geometric repair, and task-oriented preprocessing. 
         </div>
