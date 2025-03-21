@@ -232,81 +232,92 @@
 
     <div class="container is-max-fullhd" id="indoor">
       <!-- <h2 class="title is-3 has-text-centered">Subtitle Here</h2> -->
-        <div class="columns is-centered">
+      <div class="columns is-centered">
 
-          <div class="column">
-            <h2 class="title is-4 has-text-centered">Lie on Ground</h2>
-            <div class="columns is-centered">
-              <div class="column content has-text-centered"> <!-- Centered text -->
-                <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./static/videos/output.mp4"
-                          type="video/mp4">
-                </video>
-              </div>
-            </div>
-      
-              <h2 class="title is-4 has-text-centered">Lie on Sofa</h2>
-              <div class="columns is-centered">
-                <div class="column content has-text-centered"> <!-- Centered text -->
-                  <video  controls playsinline height="100%" class="rounded-video">
-                    <source src="./static/videos/output.mp4"
-                            type="video/mp4">
-                  </video>
-                </div>
-      
-              </div>
-          </div>
-      
-          <div class="column">
-            <h2 class="title is-4 has-text-centered">Lie on Slope</h2>
-            <div class="columns is-centered">
-              <div class="column content has-text-centered"> <!-- Centered text -->
-                <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./static/videos/mp3d_vis_1.mp4"
-                          type="video/mp4">
-                </video>
-              </div>
-            </div>
-      
-
-            <h2 class="title is-4 has-text-centered">Lean against Sofa</h2>
-            <div class="columns is-centered">
-              <div class="column content has-text-centered"> <!-- Centered text -->
-                <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./static/videos/output.mp4"
-                          type="video/mp4">
-                </video>
-              </div>
+        <!-- first column -->
+        <div class="column">
+          <h2 class="title is-4 has-text-centered">HSSD</h2>
+          <div class="columns is-centered">
+            <div class="column content has-text-centered">
+              <video  controls playsinline height="100%" class="rounded-video">
+                <source src="./static/videos/hssd_vis_1.mp4"
+                        type="video/mp4">
+              </video>
             </div>
           </div>
-      
-          <div class="column">
-            <h2 class="title is-4 has-text-centered">Recline on Chair</h2>
-            <div class="columns is-centered">
-              <div class="column content has-text-centered"> <!-- Centered text -->
-                <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./static/videos/output.mp4"
-                          type="video/mp4">
-                </video>
-              </div>
-        
-            </div>
-
-
-            <h2 class="title is-4 has-text-centered">Seat on Chair</h2>
-            <div class="columns is-centered">
-              <div class="column content has-text-centered"> <!-- Centered text -->
-                <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./static/videos/output.mp4"
-                          type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-
-        </div>
-    </div>
     
+            <h2 class="title is-4 has-text-centered">Gibson</h2>
+            <div class="columns is-centered">
+              <div class="column content has-text-centered">
+                <video  controls playsinline height="100%" class="rounded-video">
+                  <source src="./static/videos/output.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+    
+            </div>
+        </div>
+    
+        <!-- second column -->
+        <div class="column">
+          <h2 class="title is-4 has-text-centered">Matterport3D</h2>
+          <div class="columns is-centered">
+            <div class="column content has-text-centered">
+              <video  controls playsinline height="100%" class="rounded-video">
+                <source src="./static/videos/mp3d_vis_1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+    
+
+          <h2 class="title is-4 has-text-centered">ProcTHOR</h2>
+          <div class="columns is-centered">
+            <div class="column content has-text-centered">
+              <video  controls playsinline height="100%" class="rounded-video">
+                <source src="./static/videos/output.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+    
+        <!-- third column -->
+        <div class="column">
+          <h2 class="title is-4 has-text-centered">Gibson</h2>
+          <div class="columns is-centered">
+            <div class="column content has-text-centered">
+              <video  controls playsinline height="100%" class="rounded-video">
+                <source src="./static/videos/mp3d_vis_1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+      
+          </div>
+
+
+          <h2 class="title is-4 has-text-centered">ProcTHOR</h2>
+          <div class="columns is-centered">
+            <div class="column content has-text-centered">
+              <video  controls playsinline height="100%" class="rounded-video">
+                <source src="./static/videos/output.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          To demonstrate the superior generalizability of GLEAM, We evaluate it on 128 unseen testing scenes from ProcTHOR, HSSD, Gibson, and Matterport3D (cross-dataset). Some representative scenes are shown above.
+        </div>
+      </div>
+    </div>
+
     <hr width="100%" size="2">
 
     <h2 class="title is-2 has-text-centered">Comparisons</h2>
@@ -348,6 +359,7 @@
     <div class="columns is-centered has-text-centered">
       <h1 class="title is-1" style="color: #8C1515;">GLEAM-Bench</h1>
     </div>
+    <br>
 
     <div class="columns is-centered has-text-centered">
       <!-- <h5 class="title is-5">A benchmark for active mapping-oriented generalizable exploration in complex 3D indoor scenes</h5> -->
@@ -379,6 +391,12 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <h1 class="title is-1" style="color: #8C1515;">GLEAM</h1>
+    </div>
+    <br>
+
+    <div class="columns is-centered has-text-centered">
+      <!-- <h5 class="title is-5">A benchmark for active mapping-oriented generalizable exploration in complex 3D indoor scenes</h5> -->
+      <h4 class="title is-4">Our unified policy achieves 68.16% coverage (+11.41%, vs SOTA) with efficient trajectories across 128 unseen complex scenes.</h4>
     </div>
     <div class="content has-text-centered">
       <img width="160%" src="./static/images/Fig_Method.png">
