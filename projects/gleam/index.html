@@ -228,7 +228,7 @@
     </div>
 
     <!-- <h2 class="title is-2 has-text-centered">Evaluate on unseen scenes from ProcTHOR, HSSD, Gibson, and Matterport3D</h2> -->
-    <h2 class="title is-2 has-text-centered">Active Mapping Process</h2>
+    <!-- <h3 class="title is-3 has-text-centered">Active Mapping Process</h3> -->
 
     <div class="container is-max-fullhd" id="indoor">
       <!-- <h2 class="title is-3 has-text-centered">Subtitle Here</h2> -->
@@ -239,7 +239,7 @@
             <div class="columns is-centered">
               <div class="column content has-text-centered"> <!-- Centered text -->
                 <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./videos/output.mp4"
+                  <source src="./static/videos/output.mp4"
                           type="video/mp4">
                 </video>
               </div>
@@ -249,7 +249,7 @@
               <div class="columns is-centered">
                 <div class="column content has-text-centered"> <!-- Centered text -->
                   <video  controls playsinline height="100%" class="rounded-video">
-                    <source src="./videos/output.mp4"
+                    <source src="./static/videos/output.mp4"
                             type="video/mp4">
                   </video>
                 </div>
@@ -262,7 +262,7 @@
             <div class="columns is-centered">
               <div class="column content has-text-centered"> <!-- Centered text -->
                 <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./videos/output.mp4"
+                  <source src="./static/videos/mp3d_vis_1.mp4"
                           type="video/mp4">
                 </video>
               </div>
@@ -273,7 +273,7 @@
             <div class="columns is-centered">
               <div class="column content has-text-centered"> <!-- Centered text -->
                 <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./videos/output.mp4"
+                  <source src="./static/videos/output.mp4"
                           type="video/mp4">
                 </video>
               </div>
@@ -285,7 +285,7 @@
             <div class="columns is-centered">
               <div class="column content has-text-centered"> <!-- Centered text -->
                 <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./videos/output.mp4"
+                  <source src="./static/videos/output.mp4"
                           type="video/mp4">
                 </video>
               </div>
@@ -297,7 +297,7 @@
             <div class="columns is-centered">
               <div class="column content has-text-centered"> <!-- Centered text -->
                 <video  controls playsinline height="100%" class="rounded-video">
-                  <source src="./videos/output.mp4"
+                  <source src="./static/videos/output.mp4"
                           type="video/mp4">
                 </video>
               </div>
@@ -319,9 +319,8 @@
 
 
 
+<!-- Abstract -->
 <hr width="100%" size="2">
-
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -332,7 +331,7 @@
             Existing methods, constrained by limited training data and conservative exploration strategies, struggle to generalize across scenes with diverse layouts and complex connectivity.
             To enable scalable training and reliable evaluation, we present <strong style="color: #8C1515;">GLEAM-Bench</strong>, the first large-scale benchmark with 1,152 diverse 3D scenes from synthetic and real datasets. 
             In this work, we propose <strong style="color: #8C1515;">GLEAM</strong>, a <u>g</u>enera<u>l</u>izable <u>e</u>xploration policy for <u>a</u>ctive <u>m</u>apping.
-            Its superior generalizability comes from our semantic representations, long-term goal and randomized strategies. 
+            Its superior generalizability comes mainly from our semantic representations, long-term navigable goals, and randomized strategies.
             It significantly outperforms state-of-the-art methods, achieving 68.16% coverage (+11.41%) with efficient trajectories, and improved mapping accuracy on 128 unseen complex scenes.
         </div>
       </div>
@@ -342,9 +341,8 @@
 
 
 
-
+<!-- GLEAM-Bench -->
 <hr width="100%" size="2">
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -364,7 +362,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <div class="content has-text-justified">
-          <b>- Table</b>: The data sources for existing exploration policies for active mapping, with limited high-quality scenes employed in prior works. <!-- "<b>*</b>": ProcTHOR-10K contains exclusively layout JSONs rather than directly usable 3D meshes.<br> -->
+          <b>- Table</b>: The data sources for existing exploration policies for active mapping, with limited high-quality scenes employed in prior works. <br> <!-- "<b>*</b>": ProcTHOR-10K contains exclusively layout JSONs rather than directly usable 3D meshes.<br> -->
           <b>- Figure</b>: The distribution of 1,152 scenes by the number of rooms in GLEAM-Bench.<br>
           <b>- Overview</b>: These curated scene meshes are characterized by near-watertight geometry, diverse floorplan (≥10 types), and complex interconnectivity. We unify multi-source datasets through manual filtering, geometric repair, and task-oriented preprocessing. 
         </div>
@@ -375,8 +373,8 @@
 
 
 
+<!-- GLEAM -->
 <hr width="100%" size="2">
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -398,9 +396,8 @@
 
 
 
-
+<!-- Ablation Study -->
 <hr width="100%" size="2">
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -433,7 +430,7 @@
 
 
     <div class="content has-text-centered">
-      <img width="80%" src="./static/images/Exp_Abl_Scaling.png"">
+      <img width="70%" src="./static/images/Exp_Abl_Scaling.png"">
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
