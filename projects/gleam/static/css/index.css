@@ -10,6 +10,11 @@ body {
   text-align: center;
 } */
 
+.rounded-video {
+  border-radius: 1em !important;
+  box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.2)
+}
+
 .footer .icon-link {
     font-size: 25px;
     color: #000;
