@@ -231,6 +231,22 @@ a:hover {
   width: 3.2rem;
 }
 
+.video-frame.has-video {
+  background: #000000;
+}
+
+.video-frame.has-video::after,
+.video-frame.has-video::before {
+  display: none;
+}
+
+.video-frame video {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
 .hero-placeholder {
   border-radius: 1.4rem;
   box-shadow: 0 26px 70px rgba(15, 23, 42, 0.14);
