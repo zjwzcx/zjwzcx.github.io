@@ -232,6 +232,7 @@ a:hover {
 }
 
 .video-frame.has-video {
+  aspect-ratio: 4 / 3;
   background: #000000;
 }
 
