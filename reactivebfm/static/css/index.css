@@ -82,6 +82,10 @@ a:hover {
   font-weight: 600;
 }
 
+.author-row {
+  display: block;
+}
+
 .author-block {
   display: inline-block;
   margin: 0 0.15rem;
