@@ -43,7 +43,7 @@ a:hover {
 }
 
 .project-hero .hero-body {
-  padding: 5rem 1.5rem 3rem;
+  padding: 5rem 1.5rem 1.5rem;
 }
 
 .eyebrow {
@@ -59,7 +59,7 @@ a:hover {
   color: #8c1515;
   font-size: clamp(2.4rem, 6vw, 4.8rem);
   letter-spacing: -0.055em;
-  line-height: 0.95;
+  line-height: 1.15;
   margin-left: auto;
   margin-right: auto;
   max-width: 1050px;
@@ -79,7 +79,11 @@ a:hover {
 
 .publication-authors a {
   color: #2563eb;
-  font-weight: 600;
+  font-weight: 400;
+}
+
+.publication-authors sup {
+  font-size: 0.7em;
 }
 
 .author-row {
@@ -88,7 +92,7 @@ a:hover {
 
 .author-block {
   display: inline-block;
-  margin: 0 0.15rem;
+  margin: 0 0.5rem;
 }
 
 .affiliation-line {
@@ -129,7 +133,7 @@ a:hover {
 }
 
 .teaser-section {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .teaser-caption {
@@ -224,6 +228,7 @@ a:hover {
 .video-card .title {
   color: #18202f;
   margin-bottom: 0.8rem;
+  text-align: center;
 }
 
 .video-card.compact {
