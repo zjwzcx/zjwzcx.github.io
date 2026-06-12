@@ -166,7 +166,7 @@
       <div class="video-grid two-up">
         <article class="video-card compact">
           <h3 class="title is-5">Real-World Deployment</h3>
-          <div class="video-frame small has-video">
+          <div class="video-frame small has-video ratio-16-9">
             <video controls playsinline preload="metadata">
               <source src="./videos/reach_real_oneshot_5x.mp4" type="video/mp4">
             </video>
@@ -174,7 +174,7 @@
         </article>
         <article class="video-card compact">
           <h3 class="title is-5">Sim-to-Sim Transfer</h3>
-          <div class="video-frame small has-video">
+          <div class="video-frame small has-video ratio-16-9">
             <video controls playsinline preload="metadata">
               <source src="./videos/reach_sim_8x.mp4" type="video/mp4">
             </video>
@@ -298,9 +298,9 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-2 section-title">Streaming Interactive Control</h2>
-          <p class="section-kicker">
+          <!-- <p class="section-kicker">
             Text-conditioned streaming interactive control.
-          </p>
+          </p> -->
         </div>
       </div>
 
@@ -329,8 +329,7 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified robustness-text">
             <p>
-              Describe the disturbance protocol, robot setup, and failure recovery behavior here.
-              This is a good place to include side-by-side videos if robustness is a core result.
+              Text-conditioned streaming interactive control.
             </p>
           </div>
         </div>
@@ -458,16 +457,13 @@
           <h2 class="title is-2 section-title">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Write your abstract here. This template follows the structure of modern robotics
-              project pages: introduce the limitation of existing humanoid controllers, describe
-              the scalable training task or data source, and summarize the resulting behaviors.
-              Highlight the major axes of scaling, the unified control interface, and downstream
-              applications such as teleoperation, language-conditioned control, or navigation.
-            </p>
-            <p>
-              Example claim placeholders: our policy tracks diverse full-body motions, transfers
-              to interactive control, and supports whole-body loco-manipulation with coordinated
-              hand and foot placement.
+              While current Behavior Foundation Models (BFMs) provide robust control priors for humanoids, they only execute pre-defined reference motions. As a result, they are vulnerable to environmental shifts and incapable of reactive whole-body coordination. 
+              Naively cascading them with generative motion planners fails to achieve true reactivity, as inevitable tracking discrepancies induce fatal cumulative exposure bias.
+              To bridge this gap, we propose <b>ReactiveBFM</b>, a real-time closed-loop planning-control framework. 
+              At its core, we effectively mitigate exposure bias via a scheduled prefix sampling curriculum, forcing the generative planner to actively learn error-recovery behaviors from imperfect physical states rather than ground-truth trajectories.
+              Systematically, to reconcile the severe latency mismatch between auto-regressive planning and high-frequency tracking, we introduce an asynchronous replanning mechanism. Combined with trajectory chunking to temporally ensemble spatial references, our system guarantees spatio-temporally fluid execution without physical jitter.
+              Deployed on the Unitree G1 humanoid, ReactiveBFM demonstrates unprecedented physical agility across a vast repertoire of text-conditioned closed-loop motions. Notably, ReactiveBFM achieves zero-shot moving target reaching, showcasing intricate whole-body coordination and on-the-fly replanning. 
+              In sim-to-sim benchmarking under severe perturbations, ReactiveBFM achieves a 93.1% success rate, significantly outperforming cascaded open-loop baselines by 28.6%.
             </p>
           </div>
         </div>

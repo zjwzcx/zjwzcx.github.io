@@ -59,7 +59,7 @@ a:hover {
   color: #8c1515;
   font-size: clamp(2.4rem, 6vw, 4.8rem);
   letter-spacing: -0.055em;
-  line-height: 1.15;
+  line-height: 1.35;
   margin-left: auto;
   margin-right: auto;
   max-width: 1050px;
@@ -301,6 +301,14 @@ a:hover {
   height: 100%;
   object-fit: contain;
   width: 100%;
+}
+
+.video-frame.has-video.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame.has-video.ratio-16-9 video {
+  object-fit: fill;
 }
 
 .hero-placeholder {
