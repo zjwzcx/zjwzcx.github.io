@@ -110,7 +110,7 @@ a:hover {
 }
 
 .release-badge {
-  max-width: 800px;
+  max-width: 920px;
   margin: 1.5rem auto;
   padding: 20px 40px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
