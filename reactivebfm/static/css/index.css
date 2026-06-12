@@ -56,13 +56,17 @@ a:hover {
 }
 
 .publication-title {
-  color: #8c1515;
+  color: #1f2933;
   font-size: clamp(2.4rem, 6vw, 4.8rem);
   letter-spacing: -0.055em;
   line-height: 1.35;
   margin-left: auto;
   margin-right: auto;
   max-width: 1300px;
+}
+
+.title-brand {
+  color: #8c1515;
 }
 
 .publication-subtitle {
