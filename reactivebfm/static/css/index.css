@@ -315,6 +315,22 @@ a:hover {
   object-fit: fill;
 }
 
+.video-frame.native-ratio {
+  aspect-ratio: auto;
+  background: transparent;
+  box-shadow: none;
+}
+
+.video-frame.native-ratio::after,
+.video-frame.native-ratio::before {
+  display: none;
+}
+
+.video-frame.native-ratio video {
+  height: auto;
+  object-fit: contain;
+}
+
 .hero-placeholder {
   border-radius: 1.4rem;
   box-shadow: 0 26px 70px rgba(15, 23, 42, 0.14);

@@ -113,6 +113,12 @@
                 The code and data will be open-sourced.
               </span>
             </div> -->
+            <div class="release-badge">
+              <span class="release-badge-text">
+                <i class="fas fa-rocket"></i>
+                All motions are generated fully online, with no reference motions.
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -124,15 +130,6 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-2 section-title">Highlights</h2>
-          <!-- <p class="section-kicker">
-            We propose ReactiveBFM, a unified closed-loop planning-control framework for humanoid whole-body control. It enables zero-shot reach a moving target, streaming interactive control, and robust motion recovery.
-          </p> -->
-          <div class="release-badge">
-            <span class="release-badge-text">
-              <i class="fas fa-rocket"></i>
-              All motions are generated fully online, with no reference motions.
-            </span>
-          </div>
         </div>
       </div>
       <div class="video-frame small has-video">
@@ -353,17 +350,28 @@
         </video>
       </div>
 
-      <div class="video-grid three-up robustness-detail-grid">
+      <div class="video-grid two-up robustness-detail-grid">
         <article class="video-card compact">
           <h3 class="title is-5">Torso Perturbation Recovery</h3>
-          <div class="video-frame small">
+          <div class="video-frame small native-ratio">
             <video controls playsinline preload="metadata">
               <source src="./videos/SpinAntiClock_Kick.mp4" type="video/mp4">
             </video>
           </div>
         </article>
         <article class="video-card compact">
-          <h3 class="title is-5">Low-Posture Movement</h3>
+          <h3 class="title is-5">Command-Faithful Recovery</h3>
+          <div class="video-frame small native-ratio">
+            <video controls playsinline preload="metadata">
+              <source src="./videos/SpinAntiClock_follow_command_0.5x.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+      </div>
+
+      <div class="video-grid two-up robustness-detail-grid">
+        <article class="video-card compact">
+          <h3 class="title is-5">Video Title</h3>
           <div class="video-frame small">
             <div class="placeholder-content">
               <span class="placeholder-label">Video Placeholder</span>
@@ -371,7 +379,7 @@
           </div>
         </article>
         <article class="video-card compact">
-          <h3 class="title is-5">Athletic Motions</h3>
+          <h3 class="title is-5">Video Title</h3>
           <div class="video-frame small">
             <div class="placeholder-content">
               <span class="placeholder-label">Video Placeholder</span>
