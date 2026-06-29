@@ -305,10 +305,14 @@ a:hover {
   display: none;
 }
 
-.video-frame.robustness-highlight-video {
-  max-width: 60%;
+.robustness-highlight-card {
+  max-width: 56%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.robustness-highlight-card .robustness-highlight-video {
+  max-width: 100%;
 }
 
 .video-frame video {
