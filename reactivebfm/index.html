@@ -26,7 +26,7 @@
           <a class="navbar-item" href="#highlights">Demos</a>
           <a class="navbar-item" href="#videos">Videos</a>
           <a class="navbar-item" href="#abstract">Method</a>
-          <a class="navbar-item" href="#bibtex">BibTeX</a>
+          <a class="navbar-item" href="#acknowledgements">Acknowledgements</a>
         </div>
       </div>
     </div>
@@ -485,17 +485,65 @@
 
 
 
-  <section class="section" id="bibtex">
+  <section class="section" id="acknowledgements">
     <div class="container is-max-desktop content">
-      <!-- <h2 class="title section-title">Related Projects</h2> -->
-      <h2 class="title section-title">Citation</h2>
-      <p>If you find this project useful, please cite:</p>
+      <h2 class="title section-title">Acknowledgements</h2>
+      <p>We would like to acknowledge and recommend the following related works and resources:</p>
+      <ul>
+        <li>Our Behavior Foundation Model (BFM) solution will be released independently.</li>
+        <li>Our diffusion planner codebase is based on <a href="https://github.com/GuyTevet/CLoSD" target="_blank" rel="noopener">CLoSD</a>, though we have substantially modified and extended it for ReactiveBFM.</li>
+        <li>Our early exploration of an open-loop planning-control framework is <a href="https://arxiv.org/abs/2512.08500" target="_blank" rel="noopener">Mimic2DM</a> [CVPR 2026].</li>
+        <li>The training corpus for PhysHSI-Reach is collected from online inference rollouts using <a href="https://github.com/InternRobotics/PhysHSI" target="_blank" rel="noopener">PhysHSI</a>. The text-to-motion training corpus is sourced from HumanML3D, <a href="https://arxiv.org/abs/2511.09241" target="_blank" rel="noopener">Humanoid-Union</a>, and <a href="https://vankouf.github.io/MotionMillion/" target="_blank" rel="noopener">MotionMillion</a>.</li>
+      </ul>
+      <p>We sincerely thank Yuxi Wei, Ke Fan, Tao Huang, Junli Ren, and Weiji Xie for their constructive advice and insightful discussions. We also thank Kinetix AI for their support with the HTC VIVE Ultimate Trackers.</p>
+      <p>If you find our work useful, please consider citing ReactiveBFM and the related papers mentioned above:</p>
       <pre><code>@article{chen2026reactivebfm,
   title={ReactiveBFM: Reactive Closed-Loop Motion Planning Towards Universal Humanoid Whole-Body Control},
   author={Chen, Xiao and Zeng, Weishuai and Niu, Xiaojie and Wang, Zirui and Li, Jianan and Wang, Huayi and Xu, Furui and Chen, Jiahe and Zhong, Weixiang and Ding, Lihe and Li, Kailin and Pang, Jiangmiao and Wang, Tai and Xue, Tianfan and Wang, Jingbo},
   journal={arXiv preprint arXiv:2606.30362},
   year={2026}
 }</code></pre>
+      <details>
+        <summary><strong>BibTeX for Related Papers</strong></summary>
+        <pre><code>@inproceedings{tevet2025closd,
+  title={{CL}o{SD}: Closing the Loop between Simulation and Diffusion for Multi-task Character Control},
+  author={Tevet, Guy and Raab, Sigal and Cohan, Setareh and Reda, Daniele and Luo, Zhengyi and Peng, Xue Bin and Bermano, Amit Haim and van de Panne, Michiel},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=pZISppZSTv}
+}
+
+@article{li2025mimic2dm,
+  title={Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions},
+  author={Li, Jianan and Chen, Xiao and Huang, Tao and Wong, Tien-Tsin},
+  journal={arXiv preprint arXiv:2512.08500},
+  year={2025}
+}
+
+@article{wang2025physhsi,
+  title={PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System},
+  author={Wang, Huayi and Zhang, Wentao and Yu, Runyi and Huang, Tao and Ren, Junli and Jia, Feiyu and Wang, Zirui and Niu, Xiaojie and Chen, Xiao and Chen, Jiahe and Chen, Qifeng and Wang, Jingbo and Pang, Jiangmiao},
+  journal={arXiv preprint arXiv:2510.11072},
+  year={2025}
+}
+
+@article{wei2025humanoidunion,
+  title={Unveiling the Impact of Data and Model Scaling on High-Level Control for Humanoid Robots},
+  author={Wei, Yuxi and Wang, Zirui and Yin, Kangning and Hu, Yue and Wang, Jingbo and Chen, Siheng},
+  journal={arXiv preprint arXiv:2511.09241},
+  year={2025}
+}
+
+@misc{fan2025zerozeroshotmotiongeneration,
+  title={Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data},
+  author={Fan, Ke and Lu, Shunlin and Dai, Minyue and Yu, Runyi and Xiao, Lixing and Dou, Zhiyang and Dong, Junting and Ma, Lizhuang and Wang, Jingbo},
+  year={2025},
+  eprint={2507.07095},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2507.07095}
+}</code></pre>
+      </details>
     </div>
   </section>
 
